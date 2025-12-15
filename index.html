@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>تلگرام مود</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:#f2f3f7;
+    direction:rtl;
+}
+
+/* منوی همبرگری */
+.menu-btn {
+    font-size: 30px;
+    cursor: pointer;
+    padding: 10px;
+    border: none;
+    background: none;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    z-index: 1000;
+}
+
+.menu {
+    display: none;
+    flex-direction: column;
+    background-color: #333;
+    position: fixed;
+    top: 50px;
+    right: 0;
+    width: 200px;
+    z-index: 999;
+    border-radius: 0 0 10px 10px;
+}
+
+.menu a {
+    padding: 10px;
+    color: white;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: #555;
+}
+
+/* کد اصلی سایت */
+.container{
+    max-width:520px;
+    margin:70px auto 20px auto; /* فاصله از بالا برای منو */
+    background:#fff;
+    border-radius:12px;
+    padding:15px;
+}
+.screens{
+    display:flex;
+    gap:10px;
+    overflow-x:auto;
+}
+.screens img{
+    width:140px;
+    border-radius:10px;
+}
+.app-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin:15px 0;
+}
+.app-header img{
+    width:60px;
+    height:60px;
+    border-radius:14px;
+}
+.app-title{
+    font-size:18px;
+    font-weight:bold;
+}
+.app-desc{
+    font-size:14px;
+    color:#666;
+}
+.buttons{
+    display:flex;
+    margin-top:15px;
+    border-radius:10px;
+    overflow:hidden;
+}
+.buttons a{
+    flex:1;
+    padding:14px 5px;
+    text-align:center;
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+}
+.telegram{ background:#2ca5e0; }
+.playstore{ background:#34a853; }
+.support{ background:#25d366; }
+</style>
+</head>
+<body>
+
+<!-- منوی همبرگری -->
+<button class="menu-btn" onclick="toggleMenu()">☰</button>
+<div class="menu" id="myMenu">
+    <a href="#home">خانه</a>
+    <a href="#apps">برنامه‌ها</a>
+    <a href="#games">بازی‌ها</a>
+    <a href="#contact">تماس</a>
+</div>
+
+<div class="container">
+
+<!-- 1 2 3 اسکرین‌شات -->
+<div class="screens">
+    <img src="https://i.postimg.cc/43WnRqkg/IMG-20251215-163322.jpg">
+    <img src="https://i.postimg.cc/521tYbfJ/IMG-20251215-163250.jpg">
+    <img src="https://i.postimg.cc/MTrcV4dG/IMG-20251215-163308.jpg">
+</div>
+
+<!-- آیکن + نام -->
+<div class="app-header">
+    <img src="https://i.postimg.cc/brt51Z1K/telegram-icon.png">
+    <div>
+        <div class="app-title">Telegram</div>
+        <div class="app-desc">نسخه سریع و سبک تلگرام</div>
+    </div>
+</div>
+
+<!-- دکمه‌ها (مثل عکس) -->
+<div class="buttons">
+    <a class="telegram" href="https://t.me/All_APP_2012">
+        دانلود مود شده
+    </a>
+    <a class="playstore" href="https://play.google.com/store/apps/details?id=org.telegram.messenger">
+        دانلود فروشگاه
+    </a>
+    <a class="support" href="https://t.me/AFGModder">
+        پشتیبانی
+    </a>
+</div>
+
+</div>
+
+<script>
+function toggleMenu() {
+  const menu = document.getElementById("myMenu");
+  if (menu.style.display === "flex") {
+    menu.style.display = "none";
+  } else {
+    menu.style.display = "flex";
+  }
+}
+</script>
+
+</body>
+</html>
