@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+<meta charset="UTF-8">
+<title>برنامه‌ها</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+    margin:0;
+    font-family:sans-serif;
+    background:#f2f3f7;
+    direction:rtl;
+}
+.container{
+    max-width:520px;
+    margin:20px auto;
+    padding:15px;
+}
+.search{
+    width:100%;
+    padding:12px;
+    border-radius:8px;
+    border:1px solid #ccc;
+    margin-bottom:15px;
+}
+
+/* کارت برنامه */
+.app{
+    background:#fff;
+    padding:15px;
+    border-radius:12px;
+    box-shadow:0 3px 10px rgba(0,0,0,.1);
+}
+.app-header{
+    display:flex;
+    align-items:center;
+    gap:15px;
+}
+.app-header img{
+    width:60px;
+    height:60px;
+    border-radius:14px;
+}
+.app-title{
+    font-size:18px;
+    font-weight:bold;
+}
+.app-desc{
+    font-size:14px;
+    color:#666;
+    margin-top:4px;
+}
+
+/* دکمه‌ها */
+.buttons{
+    display:flex;
+    margin-top:15px;
+    border-radius:10px;
+    overflow:hidden;
+}
+.buttons a{
+    flex:1;
+    padding:14px 5px;
+    text-align:center;
+    text-decoration:none;
+    color:#fff;
+    font-size:14px;
+}
+.telegram{ background:#2ca5e0; }
+.playstore{ background:#34a853; }
+.support{ background:#25d366; }
+</style>
+</head>
+
+<body>
+<div class="container">
+
+<input id="search" class="search" placeholder="جستجو...">
+
+<!-- APP -->
+<div class="app" data-name="telegram">
+    <div class="app-header">
+        <img src="https://i.postimg.cc/brt51Z1K/telegram-icon.png" alt="Telegram">
+        <div>
+            <div class="app-title">Telegram Mod</div>
+            <div class="app-desc">نسخه سریع و سبک تلگرام</div>
+        </div>
+    </div>
+
+    <div class="buttons">
+        <a class="telegram" href="https://t.me/All_APP_2012">دانلود مود</a>
+        <a class="playstore" href="https://play.google.com/store/apps/details?id=org.telegram.messenger">نسخه اصلی</a>
+        <a class="support" href="https://t.me/AFGModder">پشتیبانی</a>
+    </div>
+</div>
+
+</div>
+
+<script>
+// گرفتن جستجو از URL
+const params = new URLSearchParams(location.search);
+const q = params.get('search');
+
+const input = document.getElementById('search');
+const app = document.querySelector('.app');
+
+if(q){
+    input.value = q;
+    filter(q);
+}
+
+input.addEventListener('keyup', e=>{
+    filter(e.target.value);
+});
+
+function filter(val){
+    val = val.toLowerCase();
+    app.style.display = app.dataset.name.includes(val) ? 'block' : 'none';
+}
+</script>
+
+</body>
+</html>
